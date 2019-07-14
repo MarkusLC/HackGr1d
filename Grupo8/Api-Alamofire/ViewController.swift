@@ -37,6 +37,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     //Struct to documentes saved
     var documentosSalvos:[documentosArmazenamento]!
     
+    //Struct data from user
+    var dadosUsuario = DadosCadastro(nomeUsuario: "Markus", sobrenomeUsuario: "Lopes Corgosinho", sexoUsuario: "masc", documentoUsuario: "03072589654", dataDenascimento: "1998-09-02", emailUsuario: "markus.corgosinho@gmail.com")
+    
     //User defults
     let defaults = UserDefaults.standard
     
@@ -55,7 +58,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             self.beneficios = result
         
         }
-        APIHandller.makeCotação(url:"https://gateway.gr1d.io/sandbox/travelace/v1/Cotacao", apiKey: apiKey) { (cotacaoAnalise, error) in
+        APIHandller.makeCotação(url:"https://gateway.gr1d.io/sandbox/travelace/v1/Cotacao", apiKey: apiKey, dadosUsuario: dadosUsuario) { (cotacaoAnalise, error) in
             
 //            print(cotacaoAnalise)
             self.cotacao = cotacaoAnalise as? [String:Any]
@@ -96,11 +99,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    @IBAction func deepLinkUber(_ sender: Any) {
-        
+    @IBAction func UberCall(_ sender: UIButton) {
         uberPromo()
     }
-    
     
 }
 

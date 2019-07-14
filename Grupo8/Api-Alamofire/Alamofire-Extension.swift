@@ -58,10 +58,10 @@ class NetworkAPI{
         
     }
     
-    func makeCotação(url: String, apiKey: String, completion:@escaping requestResponse) {
+    func makeCotação(url: String, apiKey: String, dadosUsuario: DadosCadastro, completion:@escaping requestResponse ) {
         
         
-        let teste = "{ \"destinos\": [ \"string\" ], \"passageiros\": [ { \"nome\": \"string\", \"dataNascimento\": \"2019-07-13T22:05:38.954Z\" } ], \"dataSaida\": \"2019-07-13T22:05:38.954Z\", \"dataRetorno\": \"2019-07-13T22:05:38.954Z\", \"tipoViagem\": 1, \"tipoTarifa\": 2, \"produtoAvulso\": true, \"cupom\": \"string\", \"classificacoes\": [ 0 ]}"
+        let teste = "{ \"destinos\": [ \"destino\" ], \"passageiros\": [ { \"nome\": \"\(dadosUsuario.nome)\", \"dataNascimento\": \"\(dadosUsuario.dataDeNascimento)\" } ], \"dataSaida\": \"2019-07-13T22:05:38.954Z\", \"dataRetorno\": \"2019-07-13T22:05:38.954Z\", \"tipoViagem\": 1, \"tipoTarifa\": 2, \"produtoAvulso\": true, \"cupom\": \"string\", \"classificacoes\": [ 0 ]}"
         func convertToDictionary(text: String) -> [String: Any]? {
             if let data = text.data(using: .utf8) {
                 do {
@@ -73,7 +73,7 @@ class NetworkAPI{
             return nil
         }
         
-        let str =  "{ \"destinos\": [ \"249\" ], \"passageiros\": [ { \"nome\": \"Markus\", \"dataNascimento\": \"1998-07-13\" } ], \"dataSaida\": \"2019-07-24T22:05:38.954Z\", \"dataRetorno\": \"2019-08-13T22:05:38.954Z\", \"tipoViagem\": 1, \"tipoTarifa\": 2, \"produtoAvulso\": false, \"cupom\": \"\", \"classificacoes\": [ 4 ]}"
+        let str =  "{ \"destinos\": [ \"249\" ], \"passageiros\": [ { \"nome\": \"\(dadosUsuario.nome)\", \"dataNascimento\": \"\(dadosUsuario.dataDeNascimento)\"} ], \"dataSaida\": \"2019-07-24T22:05:38.954Z\", \"dataRetorno\": \"2019-08-13T22:05:38.954Z\", \"tipoViagem\": 1, \"tipoTarifa\": 2, \"produtoAvulso\": false, \"cupom\": \"\", \"classificacoes\": [ 4 ]}"
         
         
   
