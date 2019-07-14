@@ -14,7 +14,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     //Outletts
 
     @IBOutlet weak var ImagemDocumentoSalvar: UIImageView!
-    
+    @IBOutlet weak var txtDatePicker: UITextField!
+   
+    let datePicker = UIDatePicker()
 
     //Variable for API handler
     var APIHandller = NetworkAPI()
@@ -35,9 +37,18 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     //Struct to documentes saved
     var documentosSalvos:[documentosArmazenamento]!
     
+    //User defults
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //here commented a function to clen UserDefults
+        //                let domain = Bundle.main.bundleIdentifier!
+        //                UserDefaults.standard.removePersistentDomain(forName: domain)
+        //                UserDefaults.standard.synchronize()
+        
         
         APIHandller.makeRequest(url: urlBeneficios, apiKey: apiKey) { (result, error) in
 
@@ -57,7 +68,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
 //            print(response)
         }
         
-    
+        if let imagemGurdada = defaults.object(forKey: "documento") as? UIImage{
+            
+            imageChoosen = imagemGurdada
+        }
     }
    
     

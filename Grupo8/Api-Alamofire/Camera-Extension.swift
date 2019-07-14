@@ -86,7 +86,7 @@ extension ViewController {
         // print out the image size as a test
         self.ImagemDocumentoSalvar.image = image
         self.imageChoosen = image
-      
+//        defaults.set(image, forKey: "Imagem")
     }
     func presentDocumentesToSave() {
         
