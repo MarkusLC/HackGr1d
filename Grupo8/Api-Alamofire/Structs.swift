@@ -30,4 +30,42 @@ struct DadosCadastro {
     var sobrenome:String
     var sexo:String
     var documento:String
+    var dataDeNascimento:String
+    var email:String
+    
+    init(nomeUsuario:String, sobrenomeUsuario:String, sexoUsuario:String, documentoUsuario:String, dataDenascimento:String, emailUsuario:String) {
+        nome = nomeUsuario
+        sobrenome = sobrenomeUsuario
+        sexo = sexoUsuario
+        documento = documentoUsuario
+        dataDeNascimento = dataDenascimento
+        email = emailUsuario
+        
+    }
+}
+
+struct Endereço {
+    var endereço:String
+    var cep:String
+    var cidade:String
+    var estado:String
+    
+    init(endereçoUsuario:String, cepUsuario:String, cidadeUsuario:String, estadoUsuario:String) {
+        endereço = endereçoUsuario
+        cep = cepUsuario
+        cidade = cidadeUsuario
+        estado = estadoUsuario
+    }
+    
+}
+
+struct DadosPagamento {
+    var bandeira:String
+    var nomeTitulas:String
+    var cpfTitular:String
+    var numeroDoCartao:String
+    var cvv:String
+    var mesValidade:String
+    var anoValidade:String
+    
 }

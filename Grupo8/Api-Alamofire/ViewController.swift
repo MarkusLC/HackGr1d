@@ -42,11 +42,31 @@ class ViewController: UIViewController {
         }
         APIHandller.makeAnaliseDocument(url: "https://gateway.gr1d.io/sandbox/compline/cnh/v1/job/create", apiKey: apiKeyCNH) { (response, error) in
             
-            print(response)
+//            print(response)
         }
-
+        
     }
-
+   
+    
+    func uberPromo()  {
+        
+        if let appURL = URL(string: "uber://"){
+            let canOpen = UIApplication.shared.canOpenURL(appURL)
+            print(canOpen)
+            
+            let urlDesconto = URL(string: "uber://?action=applyPromo&client_id=oR0w9lRbIYHRTf3qWtVuRYfIL4j9vU0h&promo=teste")
+            
+            if UIApplication.shared.canOpenURL(urlDesconto!){
+                
+                UIApplication.shared.open(urlDesconto!, options: [:], completionHandler: nil)
+            }
+        }
+        
+        
+       
+        
+        
+    }
 
 }
 
