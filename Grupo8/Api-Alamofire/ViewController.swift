@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //Outletts
-
+    @IBOutlet weak var idadeUsuario: UITextField!
+    
     @IBOutlet weak var ImagemDocumentoSalvar: UIImageView!
     @IBOutlet weak var txtDatePicker: UITextField!
    
@@ -45,6 +46,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        idadeUsuario.delegate = self
         // Do any additional setup after loading the view.
         
         //here commented a function to clen UserDefults
@@ -102,6 +104,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     @IBAction func UberCall(_ sender: UIButton) {
         uberPromo()
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var ano = 2019 - 21
+        
+        dadosUsuario.dataDeNascimento = "\(ano)-07-12"
+        
+        return false
+    }
 }
 

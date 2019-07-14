@@ -500,7 +500,7 @@
         <!--View Controller-->
         <scene sceneID="3OV-wS-Hbt">
             <objects>
-                <viewController id="Rz7-Ql-rfW" sceneMemberID="viewController">
+                <viewController id="Rz7-Ql-rfW" customClass="ViewController" customModule="Api_Alamofire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KzF-sU-3IR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,12 +561,26 @@
                                     <segue destination="mCa-Eq-Gcl" kind="show" id="zEq-ce-NIj"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYI-EN-1a7">
+                                <rect key="frame" x="256" y="214" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="idade:" destination="GsW-RM-oRB" eventType="editingDidEnd" id="WWG-Zp-CdR"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lYP-BI-5L8"/>
                     </view>
+                    <connections>
+                        <outlet property="idadeUsuario" destination="fYI-EN-1a7" id="Xlf-Pe-B7A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXa-Am-5cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GsW-RM-oRB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-767.20000000000005" y="99.400299850074973"/>
         </scene>
@@ -723,9 +737,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7tT-SJ-9jS"/>
-        <segue reference="uEz-FY-Y25"/>
+        <segue reference="m2J-Nh-aCa"/>
         <segue reference="6ll-jg-IEx"/>
-        <segue reference="mDE-Nv-tXC"/>
+        <segue reference="zEq-ce-NIj"/>
         <segue reference="ibd-I4-R2y"/>
         <segue reference="qFo-cu-VtS"/>
         <segue reference="682-lg-vUZ"/>
