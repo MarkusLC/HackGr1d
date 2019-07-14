@@ -94,8 +94,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         
         performSegue(withIdentifier: "backWithDocuments", sender: self)
         
+    }
+    
+    @IBAction func deepLinkUber(_ sender: Any) {
         
-        
+        uberPromo()
     }
     
     
