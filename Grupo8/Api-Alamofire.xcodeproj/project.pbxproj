@@ -15,6 +15,8 @@
 		13818A0A22D61C8E00AB2FD9 /* Api_AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13818A0922D61C8E00AB2FD9 /* Api_AlamofireTests.swift */; };
 		13818A1522D61C8E00AB2FD9 /* Api_AlamofireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13818A1422D61C8E00AB2FD9 /* Api_AlamofireUITests.swift */; };
 		13BEA5A822D7B9D200245DAA /* Alamofire-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEA5A722D7B9D200245DAA /* Alamofire-Extension.swift */; };
+		13D0AA6522DAB3EE004181CC /* Camera-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D0AA6422DAB3EE004181CC /* Camera-Extension.swift */; };
+		13D0AA6722DABD7F004181CC /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D0AA6622DABD7F004181CC /* Structs.swift */; };
 		7D1C7496DB283CF042BA5F81 /* Pods_Api_AlamofireUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E48F7C2D3D2F591982439B /* Pods_Api_AlamofireUITests.framework */; };
 		89940DFD4341BF5FE15324BF /* Pods_Api_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1790C395C11825A223F93A /* Pods_Api_Alamofire.framework */; };
 		8BDD74DFD549089A3985A788 /* Pods_Api_AlamofireTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE000D7F8FD65AB40C0C777 /* Pods_Api_AlamofireTests.framework */; };
@@ -53,6 +55,8 @@
 		13818A1422D61C8E00AB2FD9 /* Api_AlamofireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api_AlamofireUITests.swift; sourceTree = "<group>"; };
 		13818A1622D61C8E00AB2FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BEA5A722D7B9D200245DAA /* Alamofire-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire-Extension.swift"; sourceTree = "<group>"; };
+		13D0AA6422DAB3EE004181CC /* Camera-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera-Extension.swift"; sourceTree = "<group>"; };
+		13D0AA6622DABD7F004181CC /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		412851933BE3D3E1CD2B3C9D /* Pods-Api-AlamofireUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api-AlamofireUITests.release.xcconfig"; path = "Target Support Files/Pods-Api-AlamofireUITests/Pods-Api-AlamofireUITests.release.xcconfig"; sourceTree = "<group>"; };
 		418625160812D52492E87A02 /* Pods-Api-AlamofireUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api-AlamofireUITests.debug.xcconfig"; path = "Target Support Files/Pods-Api-AlamofireUITests/Pods-Api-AlamofireUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		903A91CB0738C173C4081096 /* Pods-Api-Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api-Alamofire.release.xcconfig"; path = "Target Support Files/Pods-Api-Alamofire/Pods-Api-Alamofire.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			children = (
 				138189F422D61C8D00AB2FD9 /* AppDelegate.swift */,
 				138189F622D61C8D00AB2FD9 /* ViewController.swift */,
+				13D0AA6622DABD7F004181CC /* Structs.swift */,
+				13D0AA6422DAB3EE004181CC /* Camera-Extension.swift */,
 				13BEA5A722D7B9D200245DAA /* Alamofire-Extension.swift */,
 				138189F822D61C8D00AB2FD9 /* Main.storyboard */,
 				138189FB22D61C8E00AB2FD9 /* Assets.xcassets */,
@@ -389,6 +395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D0AA6522DAB3EE004181CC /* Camera-Extension.swift in Sources */,
+				13D0AA6722DABD7F004181CC /* Structs.swift in Sources */,
 				138189F722D61C8D00AB2FD9 /* ViewController.swift in Sources */,
 				13BEA5A822D7B9D200245DAA /* Alamofire-Extension.swift in Sources */,
 				138189F522D61C8D00AB2FD9 /* AppDelegate.swift in Sources */,

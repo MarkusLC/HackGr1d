@@ -16,12 +16,34 @@ class NetworkAPI{
     
     typealias requestResponse = (Any?, Error?) -> Void
     
+    
+    func makeAnaliseDocument(url: String, apiKey: String, completion:@escaping requestResponse)  {
+        let headers: HTTPHeaders = ["accept":"application/json","endUserId": "1234","X-Api-Key":apiKey]
+        
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Result: \(response.result)")                         // response serialization result
+            
+            
+            if let jsonArray = response.result.value {
+                
+                print(response.description)
+                completion(jsonArray,nil)
+                
+            }else if let error = response.error {
+                completion(nil,error)
+            }
+        }
+    }
+    
+    
+    
     func makeRequest(url: String, apiKey: String, completion:@escaping requestResponse){
         
         let headers: HTTPHeaders = ["X-Api-Key":apiKey,"accept":"application/json"]
         
         Alamofire.request(url, headers: headers).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
+            print("Request: \(String(describing: response.response))")   // original url request
             print("Result: \(response.result)")                         // response serialization result
             
             
@@ -51,7 +73,11 @@ class NetworkAPI{
             return nil
         }
         
-        let str =  "{ \"destinos\": [ \"AMERICA CENTRAL\" ], \"passageiros\": [ { \"nome\": \"Markus\", \"dataNascimento\": \"1998-07-13\" } ], \"dataSaida\": \"2019-08-13T22:05:38.954Z\", \"dataRetorno\": \"2019-09-13T22:05:38.954Z\", \"tipoViagem\": 0, \"tipoTarifa\": 0, \"produtoAvulso\": true, \"cupom\": \"string\", \"classificacoes\": [ 0 ]}"
+        let str =  "{ \"destinos\": [ \"249\" ], \"passageiros\": [ { \"nome\": \"Markus\", \"dataNascimento\": \"1998-07-13\" } ], \"dataSaida\": \"2019-07-24T22:05:38.954Z\", \"dataRetorno\": \"2019-08-13T22:05:38.954Z\", \"tipoViagem\": 1, \"tipoTarifa\": 2, \"produtoAvulso\": false, \"cupom\": \"\", \"classificacoes\": [ 4 ]}"
+        
+        
+  
+        
         
         let dict = convertToDictionary(text: str)
         
