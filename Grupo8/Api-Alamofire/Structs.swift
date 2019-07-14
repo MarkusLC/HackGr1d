@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Cotacoes {
     
@@ -67,5 +68,11 @@ struct DadosPagamento {
     var cvv:String
     var mesValidade:String
     var anoValidade:String
+    
+}
+
+struct documentosArmazenamento {
+    var image:UIImage
+    var tags:[String]
     
 }

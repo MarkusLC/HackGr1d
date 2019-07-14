@@ -18,7 +18,7 @@ class NetworkAPI{
     
     
     func makeAnaliseDocument(url: String, apiKey: String, completion:@escaping requestResponse)  {
-        let headers: HTTPHeaders = ["accept":"application/json","endUserId": "1234","X-Api-Key":apiKey]
+        let headers: HTTPHeaders = ["accept":"application/json", "endUserId":"3453", "X-Api-Key":apiKey]
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request

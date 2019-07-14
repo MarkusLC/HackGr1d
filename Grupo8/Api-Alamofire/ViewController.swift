@@ -9,7 +9,12 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //Outletts
+
+    @IBOutlet weak var ImagemDocumentoSalvar: UIImageView!
+    
 
     //Variable for API handler
     var APIHandller = NetworkAPI()
@@ -20,10 +25,16 @@ class ViewController: UIViewController {
     //Handler beneficios
     var beneficios:Any!
     var cotacao:Any!
+    
     //Varible for the imagem chosen
     var imageChoosen = UIImage()
+    
     //Struct to cotacaoes
     var cotacaoRecebida:Cotacoes!
+    
+    //Struct to documentes saved
+    var documentosSalvos:[documentosArmazenamento]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,18 +44,20 @@ class ViewController: UIViewController {
             self.beneficios = result
         
         }
-        APIHandller.makeCotação(url: "https://gateway.gr1d.io/sandbox/travelace/v1/Cotacao", apiKey: apiKey) { (cotacaoAnalise, error) in
+        APIHandller.makeCotação(url:"https://gateway.gr1d.io/sandbox/travelace/v1/Cotacao", apiKey: apiKey) { (cotacaoAnalise, error) in
             
+//            print(cotacaoAnalise)
             self.cotacao = cotacaoAnalise as? [String:Any]
             
             self.cotacaoRecebida =  Cotacoes.init(despesas: ""  , despesasOdonto: "", despesasFarma: "", invalidez: "")
             
         }
-        APIHandller.makeAnaliseDocument(url: "https://gateway.gr1d.io/sandbox/compline/cnh/v1/job/create", apiKey: apiKeyCNH) { (response, error) in
+        APIHandller.makeAnaliseDocument(url:"https://gateway.gr1d.io/sandbox/compline/cnh/v1/job/create", apiKey: apiKeyCNH) { (response, error) in
             
 //            print(response)
         }
         
+    
     }
    
     
@@ -61,12 +74,16 @@ class ViewController: UIViewController {
                 UIApplication.shared.open(urlDesconto!, options: [:], completionHandler: nil)
             }
         }
+    }
+
+    @IBAction func saveDocumentes(_ sender: Any) {
         
+        performSegue(withIdentifier: "backWithDocuments", sender: self)
         
-       
         
         
     }
-
+    
+    
 }
 
