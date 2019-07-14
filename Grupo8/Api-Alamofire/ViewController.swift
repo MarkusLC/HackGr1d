@@ -46,7 +46,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        idadeUsuario.delegate = self
+//        idadeUsuario.delegate = self
         // Do any additional setup after loading the view.
         
         //here commented a function to clen UserDefults
