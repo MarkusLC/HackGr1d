@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             let canOpen = UIApplication.shared.canOpenURL(appURL)
             print(canOpen)
             
-            let urlDesconto = URL(string: "uber://?action=applyPromo&client_id=oR0w9lRbIYHRTf3qWtVuRYfIL4j9vU0h&promo=teste")
+            let urlDesconto = URL(string: "uber://?action=applyPromo&client_id=oR0w9lRbIYHRTf3qWtVuRYfIL4j9vU0h&promo=CUPONOMIA_20")
             
             if UIApplication.shared.canOpenURL(urlDesconto!){
                 
